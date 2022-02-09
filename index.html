@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Incognito</title>
     <!-- CSS y SCSS -->
-    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./scss/main.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
@@ -35,7 +34,7 @@
     </section>
 
     <!-- TITLE -->
-    <section><h1 id="shop" class="section-tittle">FORMAL SUITS</h1></section>
+    <section id="shop"><h1 class="shopTitle">FORMAL SUITS</h1></section>
 
     <!-- PRODUCTS (SUITS) -->
     <section class="products">
@@ -116,9 +115,7 @@
                 </div>
             </div>
         </article>
-    </section>
 
-    <section class="products">
         <!-- SUIT 4 -->
         <article>
             <div class="imageProduct">
@@ -135,7 +132,7 @@
                     <div class="accordion-body">
                         <div class="descriptionProduct">
                             <p>Natural Stretch Dark Gray Suit</p>
-                            <h3>$2.100</h3>
+                            <h3>$2.450</h3>
                             <h5>DRAGO</h5>
                             <a class="suitFour" href="#finalCompra"><button class="buyBtn" type="button">Buy</button></a>
                         </div>
@@ -161,7 +158,7 @@
                     <div class="accordion-body">
                         <div class="descriptionProduct">
                             <p>Light Gray Silk Wool Suit</p>
-                            <h3>$2.620</h3>
+                            <h3>$2.820</h3>
                             <h5>VITALE BARBERIS CANONICO</h5>
                             <a class="suitFive" href="#finalCompra"><button class="buyBtn" type="button">Buy</button></a>
                         </div>
@@ -187,7 +184,7 @@
                     <div class="accordion-body">
                         <div class="descriptionProduct">
                             <p>Natural Stretch Dark Suit</p>
-                            <h3>$3.550</h3>
+                            <h3>$3.360</h3>
                             <h5>DRAGO</h5>
                             <a class="suitSix" href="#finalCompra"><button class="buyBtn" type="button">Buy</button></a>
                         </div>
@@ -201,19 +198,13 @@
     <!-- ORDERS -->
     <form id="finalCompra" method="post">
         <h3>ORDERS</h3>
-        <div class="row">
+        <div class="compraInfo">
             <label>Suit:</label>
             <div class="rowInput" id="suitName"></div>
-        </div>
-        <div class="row">
             <label>Quantity:</label>
             <input class="rowInput" id="cantidad" type="number" placeholder="Sign a number">
-        </div>
-        <div class="row">
             <label>Price:</label>
             <div class="rowInput" id="costo"></div>
-        </div>
-        <div class="row">
             <label>TOTAL:</label>
             <div class="rowInput" id="resultado"></div>
         </div>
@@ -226,24 +217,20 @@
     <!-- END OF PURCHASE -->
     <form id="finalCompraDos" method="post" >
         <h3>END OF PURCHASE</h3>
-        <div class="row">
+        <div class="compraInfo">
             <label>Name:</label>
             <input id="name" class="rowInput" type="text" placeholder="Sign your name">
-        </div>
-        <div class="row">
             <label>Email:</label>
             <input id="email" class="rowInput" type="text" placeholder="Sign your email">
-        </div>
-        <div class="row">
             <label>Direction:</label>
             <input id="direction" class="rowInput" type="text" placeholder="Sign your direction">
         </div>
         <div class="rowBtn">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btns" onclick="limpiarTwo();">
+            <button type="button" class="btn btns" onclick="limpiarTwo();">
                 CLEAN
             </button>
-            <button type="button" class="btn btn-primary btns" id="finishBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btns" id="finishBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 FINISH
             </button>
         </div>

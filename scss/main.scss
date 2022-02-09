@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+}
+
 .main {
     display: flex;
     flex-direction: row;
@@ -13,6 +23,26 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        .nav-link, .navbar-nav {
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: unset!important;
+            margin: unset!important;
+        }
+
+        .mainLogo {
+            width: 5rem;
+        }
     }
 
     .navbar-nav {
@@ -75,6 +105,21 @@
     }
 }
 
+#shop {
+    margin-top: 3rem;
+
+    .shopTitle {
+        margin-left: 5%;
+        border: 3px solid darkgoldenrod;
+        width: 30%;
+        text-align: center;
+        background-color: black;
+        border-radius: 1rem;
+        color: lightyellow;
+        margin-bottom: unset!important;
+    }
+}
+
 .products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -113,17 +158,21 @@
     }
 }
 
-#finalCompra {
+#finalCompra, #finalCompraDos {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    margin: 2rem 0rem;
 
-    .row {
+    .compraInfo {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         text-align: end;
-        margin: 0.3rem 0;
+    }
+    .compraInfo label {
+        margin-right: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .rowBtn {
@@ -144,51 +193,20 @@
         background-color: silver;
         border: 1px solid darkcyan;
         border-radius: .25rem;
-        width: 16.3rem;
-        text-align: end;
+        width: 15rem;
+        text-align: center;
+        margin-bottom: 1rem;
     }
 }
 
 #finalCompraDos {
-    margin-top: 2rem;
     display: none;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-
-    .row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        text-align: end;
-        margin: 0.3rem 0;
-    }
-
-    .rowBtn {
-        margin: 0.6rem;
-
-        .btns {
-            color: white;
-            text-decoration: none;
-            border: 2px solid silver;
-            padding: 0rem 0.6rem;
-            border-radius: 4px;
-            background-color: black;
-        }
-    }
-    
-    #cantidad, #costo, #resultado, .rowInput {
-        color: black;
-        background-color: silver;
-        border: 1px solid darkcyan;
-        border-radius: .25rem;
-        width: 16.3rem;
-        text-align: end;
-    }
 }
 
 #foot {
     align-items: center;
     background-color: rgba(128, 128, 128, 0.452);
+    padding: 1rem;
 
     .footInfo {
         display: flex;
@@ -211,5 +229,5 @@
     }
 }
 
-@import "product";
 @import "edit";
+@import "responsive";

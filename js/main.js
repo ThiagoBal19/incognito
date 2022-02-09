@@ -10,25 +10,13 @@ $(".btnDescription").click(() => {
 
 
 // PRODUCTS
-// Array sin uso
-const productos = [
-    { id: 1, nombre: "Leggerissimo Blue Suit", precio: 2100 },
-    { id: 2, nombre: "Stretch Mohair Wool Suit", precio: 2620 },
-    { id: 3, nombre: "Striped Wool Silk Linen Suit" , precio: 3550},
-    { id: 4, nombre: "Natural Stretch Dark Gray Suit" , precio: 2100},
-    { id: 5, nombre: "Light Gray Silk Wool Suit" , precio: 2620},
-    { id: 6, nombre: "Natural Stretch Dark Suit" , precio: 3550}
-];
-
 
 // Orders
 function limpiar() {
     document.getElementById('finalCompra').reset();
-    console.log("Clean")
 }
 function limpiarTwo() {
     document.getElementById('finalCompraDos').reset();
-    console.log("Clean")
 }
 
 let resultado;
@@ -40,59 +28,49 @@ const Total = function total() {
     $(".suitOne").click(() => {
         suitSelected.innerHTML = "Leggerissimo Blue Suit";
         cost.innerHTML = 2100;
-        console.log("precio = $1");
     })
 
     // Suit 2
     $(".suitTwo").click(() => {
         suitSelected.innerHTML = "Stretch Mohair Wool Suit"
         cost.innerHTML = 2620;
-        console.log("precio = $2");
     })
 
     // Suit 3
     $(".suitThree").click(() => {
         suitSelected.innerHTML = "Striped Wool Silk Linen Suit"
         cost.innerHTML = 3550;
-        console.log("precio = $3");
     })
 
     // Suit 4
     $(".suitFour").click(() => {
         suitSelected.innerHTML = "Natural Stretch Dark Gray Suit"
-        cost.innerHTML = 2100;
-        console.log("precio = $4");
+        cost.innerHTML = 2450;
     })
 
     // Suit 5
     $(".suitFive").click(() => {
         suitSelected.innerHTML = "Light Gray Silk Wool Suit"
-        cost.innerHTML = 2620;
-        console.log("precio = $5");
+        cost.innerHTML = 2820;
     })
 
     // Suit 6
     $(".suitSix").click(() => {
         suitSelected.innerHTML = "Natural Stretch Dark Suit"
-        cost.innerHTML = 3550;
-        console.log("precio = $6");
+        cost.innerHTML = 3360;
     })
 
     let numero1 = parseInt(document.getElementById("cantidad").value);
     let numero2 = cost.innerHTML;
 
     if (!numero1) {
-        console.log("Enter an amount");
         return;
     }
 
     resultado = numero1 * numero2;
-    console.log(resultado);
-
-    console.log("End of Purchase");
 
     let precioFinal = document.getElementById("resultado");
-    precioFinal.innerHTML = resultado;
+    precioFinal.innerHTML = "$" + resultado;
 }
 
 let finPedido = document.getElementById("resolver");
@@ -106,10 +84,9 @@ finPedido.onclick =
 
 // End of Purchase
 let end = document.getElementById("finalCompraDos");
-$("#resolver").click(() => {
-    end.style = "display: flex";
-    console.log("End is available");  
-})
+    $("#resolver").click(() => {
+        end.style = "display: flex";
+    })
 
 // Modal Edit
 let modal = document.getElementById("endModal");

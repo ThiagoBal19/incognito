@@ -1,0 +1,62 @@
+@media only screen and (min-width: 150px) and (max-width: 720px) {
+    .banner {
+        .scroll-down {
+            display: none;
+        }
+    }
+
+    
+    .banner img {
+        height: 23rem;
+    }
+
+    #shop {
+        display: flex;
+        justify-content: center;
+
+        .shopTitle {
+            margin-left: unset;
+            width: 70%;
+        }
+    }
+
+    .products {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #finalCompra, #finalCompraDos {
+        #cantidad, #costo, #resultado, .rowInput {
+            width: 9rem;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (min-width: 720px) and (max-width: 960px) {
+    .banner {
+        .scroll-down {
+            display: none;
+        }
+    }
+
+    #shop {
+        display: flex;
+        justify-content: center;
+
+        .shopTitle {
+            margin-left: unset;
+            width: 70%;
+        }
+    }
+
+    .products {
+        .descriptionProduct {
+            height: 12rem;
+
+            h5 {
+                height: 3rem;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
