@@ -11959,7 +11959,18 @@ fieldset:disabled .btn {
 
 .main .navbar-nav .nav-link {
   color: white;
+  font-weight: 500;
+  opacity: 0.7;
   padding: unset !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .navbar-nav .nav-link:hover {
+  font-weight: 500;
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #form {

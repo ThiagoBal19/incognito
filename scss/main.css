@@ -25,7 +25,9 @@ body {
   height: 4.5rem;
   position: fixed;
   width: 100%;
-  background-color: rgba(128, 128, 128, 0.452);
+  background-color: rgba(128, 128, 128, 0.51);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   z-index: 100;
 }
 
@@ -60,6 +62,10 @@ body {
 
 .main .brand .mainLogo {
   width: 5rem;
+}
+
+.main .brand:hover {
+  cursor: pointer;
 }
 
 .main .navbar-nav {
@@ -161,57 +167,84 @@ body {
   margin-bottom: unset !important;
 }
 
-.products {
+#products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#products article {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  margin: 1rem 0rem;
-}
-
-.products article {
   margin: 2rem;
-  -webkit-box-shadow: 0 0 15px black;
-          box-shadow: 0 0 15px black;
+  justify-items: center;
 }
 
-.products .imageProduct img {
-  width: 90%;
+#products .imageProduct {
+  width: 60%;
 }
 
-.products .descriptionProduct {
+#products .descriptionProduct {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  -webkit-box-shadow: 0 0 3px black;
+          box-shadow: 0 0 3px black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin: 1rem;
+  width: 80%;
 }
 
-.products .descriptionProduct a {
-  color: black;
-  text-decoration: none;
+#products .descriptionProduct div h2, #products .descriptionProduct div .h2 {
+  font-size: 1rem;
 }
 
-.products .descriptionProduct a .buyBtn {
+#products .descriptionProduct div h4, #products .descriptionProduct div .h4 {
+  font-size: 0.9rem;
+}
+
+#products .descriptionProduct .buyBtn {
   border: 2px solid silver;
   padding: 0.5rem 1rem;
-  margin: 0.5rem 0rem;
+  margin: 1rem;
   border-radius: 4px;
-}
-
-.products .descriptionProduct a .buyBtn:hover {
+  font-weight: 500;
   -webkit-transition: 1s;
   transition: 1s;
+  text-decoration: none;
+  color: black;
+}
+
+#products .descriptionProduct .buyBtn:hover {
+  -webkit-transition: 1s;
+  transition: 1s;
+  font-weight: 500;
+  color: white;
   background-color: gray;
 }
 
-#finalCompra, #finalCompraDos {
+#products .descriptionProduct:hover {
+  -webkit-box-shadow: 0 0 15px black;
+          box-shadow: 0 0 15px black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#endPurchase, #endPurchaseTwo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,7 +259,7 @@ body {
   margin: 2rem 0rem;
 }
 
-#finalCompra .compraInfo, #finalCompraDos .compraInfo {
+#endPurchase .purchaseInfo, #endPurchaseTwo .purchaseInfo {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -234,25 +267,34 @@ body {
   text-align: end;
 }
 
-#finalCompra .compraInfo label, #finalCompraDos .compraInfo label {
+#endPurchase .purchaseInfo label, #endPurchaseTwo .purchaseInfo label {
   margin-right: 0.5rem;
   margin-bottom: 1rem;
 }
 
-#finalCompra .rowBtn, #finalCompraDos .rowBtn {
+#endPurchase .rowBtn, #endPurchaseTwo .rowBtn {
   margin: 0.6rem;
 }
 
-#finalCompra .rowBtn .btns, #finalCompraDos .rowBtn .btns {
+#endPurchase .rowBtn .btns, #endPurchaseTwo .rowBtn .btns {
   color: white;
   text-decoration: none;
   border: 2px solid silver;
   padding: 0rem 0.6rem;
   border-radius: 4px;
   background-color: black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
-#finalCompra #cantidad, #finalCompra #costo, #finalCompra #resultado, #finalCompra .rowInput, #finalCompraDos #cantidad, #finalCompraDos #costo, #finalCompraDos #resultado, #finalCompraDos .rowInput {
+#endPurchase .rowBtn .btns:hover, #endPurchaseTwo .rowBtn .btns:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#endPurchase #quantity, #endPurchase #cost, #endPurchase #result, #endPurchase .rowInput, #endPurchaseTwo #quantity, #endPurchaseTwo #cost, #endPurchaseTwo #result, #endPurchaseTwo .rowInput {
   color: black;
   background-color: silver;
   border: 1px solid darkcyan;
@@ -262,14 +304,12 @@ body {
   margin-bottom: 1rem;
 }
 
-#finalCompraDos {
+#endPurchaseTwo {
   display: none;
 }
 
 #foot {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
   background-color: rgba(128, 128, 128, 0.452);
   padding: 1rem;
 }
@@ -292,6 +332,13 @@ body {
 
 #foot .footInfo h4, #foot .footInfo .h4 {
   margin: 0.5rem 0rem;
+  font-family: fantasy;
+  font-size: 1.2rem;
+}
+
+#foot .footInfo h5, #foot .footInfo .h5 {
+  font-family: fantasy;
+  font-size: 1.2rem;
 }
 
 #foot .social {
@@ -307,10 +354,25 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 1rem;
 }
 
 #foot .social img {
   width: 3rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#foot .social img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#foot .copyright {
+  margin-top: 1rem;
+  font-family: fangsong;
 }
 
 /*!
@@ -12274,7 +12336,18 @@ fieldset:disabled .btn {
 
 .main .navbar-nav .nav-link {
   color: white;
+  font-weight: 500;
+  opacity: 0.7;
   padding: unset !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .navbar-nav .nav-link:hover {
+  font-weight: 500;
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #form {
@@ -12322,13 +12395,18 @@ fieldset:disabled .btn {
     margin-left: unset;
     width: 70%;
   }
-  .products {
+  #products article {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
-  #finalCompra #cantidad, #finalCompra #costo, #finalCompra #resultado, #finalCompra .rowInput, #finalCompraDos #cantidad, #finalCompraDos #costo, #finalCompraDos #resultado, #finalCompraDos .rowInput {
-    width: 9rem;
-    text-align: center;
+  #products .imageProduct {
+    width: 80%;
+  }
+  #products .descriptionProduct {
+    width: unset;
+  }
+  #endPurchase #quantity, #endPurchase #cost, #endPurchase #result, #endPurchase .rowInput, #endPurchaseTwo #quantity, #endPurchaseTwo #cost, #endPurchaseTwo #result, #endPurchaseTwo .rowInput {
+    width: 10rem;
   }
 }
 
@@ -12348,12 +12426,20 @@ fieldset:disabled .btn {
     margin-left: unset;
     width: 70%;
   }
-  .products .descriptionProduct {
-    height: 12rem;
+  #products .imageProduct {
+    width: 100%;
   }
-  .products .descriptionProduct h5, .products .descriptionProduct .h5 {
-    height: 3rem;
+  #products .descriptionProduct {
+    width: unset;
+  }
+  #products .descriptionProduct div h2, #products .descriptionProduct div .h2 {
+    font-size: 1.5rem;
+  }
+  #products .descriptionProduct div h4, #products .descriptionProduct div .h4 {
     font-size: 0.8rem;
+  }
+  #endPurchase #quantity, #endPurchase #cost, #endPurchase #result, #endPurchase .rowInput, #endPurchase #quantity, #endPurchase #cost, #endPurchase #result, #endPurchase .rowInput {
+    width: 11rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

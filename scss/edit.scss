@@ -1,7 +1,19 @@
 @import "../bootstrapNode/node_modules/bootstrap/scss/bootstrap.scss";
-.main .navbar-nav .nav-link {
-    color: white;
-    padding: unset!important;
+.main {
+    .navbar-nav {
+        .nav-link {
+            color: white;
+            font-weight: 500;
+            opacity: 0.7;
+            padding: unset!important;
+            transition: 0.5s;
+        }
+        .nav-link:hover {
+            font-weight: 500;
+            opacity: 1;
+            transition: 0.5s;
+        }
+    }
 }
 #form {
     color: black;

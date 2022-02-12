@@ -17,13 +17,18 @@
     margin-left: unset;
     width: 70%;
   }
-  .products {
+  #products article {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
-  #finalCompra #cantidad, #finalCompra #costo, #finalCompra #resultado, #finalCompra .rowInput, #finalCompraDos #cantidad, #finalCompraDos #costo, #finalCompraDos #resultado, #finalCompraDos .rowInput {
-    width: 9rem;
-    text-align: center;
+  #products .imageProduct {
+    width: 80%;
+  }
+  #products .descriptionProduct {
+    width: unset;
+  }
+  #endPurchase #quantity, #endPurchase #cost, #endPurchase #result, #endPurchase .rowInput, #endPurchaseTwo #quantity, #endPurchaseTwo #cost, #endPurchaseTwo #result, #endPurchaseTwo .rowInput {
+    width: 10rem;
   }
 }
 
@@ -43,12 +48,20 @@
     margin-left: unset;
     width: 70%;
   }
-  .products .descriptionProduct {
-    height: 12rem;
+  #products .imageProduct {
+    width: 100%;
   }
-  .products .descriptionProduct h5 {
-    height: 3rem;
+  #products .descriptionProduct {
+    width: unset;
+  }
+  #products .descriptionProduct div h2 {
+    font-size: 1.5rem;
+  }
+  #products .descriptionProduct div h4 {
     font-size: 0.8rem;
+  }
+  #endPurchase #quantity, #endPurchase #cost, #endPurchase #result, #endPurchase .rowInput, #endPurchase #quantity, #endPurchase #cost, #endPurchase #result, #endPurchase .rowInput {
+    width: 11rem;
   }
 }
 /*# sourceMappingURL=responsive.css.map */
